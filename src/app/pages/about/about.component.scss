@@ -1,0 +1,165 @@
+.about-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1f2e 0%, #252b3b 100%);
+  padding: 8rem 1.5rem 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+.highlight {
+  color: #4ade80;
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-text {
+  background-color: #2d3748;
+  padding: 3rem;
+  border-radius: 1rem;
+  color: #e2e8f0; /* slightly lighter for better readability */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.about-text h2 {
+  font-size: 2.25rem;
+  color: #4ade80;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.about-text p {
+  font-size: 1.125rem;
+  line-height: 1.9; /* more breathing space */
+  color: #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.about-text ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  list-style-type: disc;
+}
+
+.about-text ul li {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
+
+.experience-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 2px solid #4a5568;
+}
+
+.stat {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #1a1f2e;
+  border-radius: 0.75rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(74, 222, 128, 0.2);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat h3 {
+  font-size: 2.25rem;
+  color: #4ade80;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.stat p {
+  color: #cbd5e1;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.cv-download {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.btn-download {
+  padding: 1rem 2rem;
+  background-color: #4ade80;
+  color: #1a1f2e;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-download:hover:not(:disabled) {
+  background-color: #22c55e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(74, 222, 128, 0.4);
+}
+
+.btn-download:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.5rem;
+  }
+
+  .experience-stats {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .about-text {
+    padding: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.75rem;
+  }
+
+  .about-text p,
+  .about-text ul li {
+    font-size: 1rem;
+  }
+  .btn-download {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,109 @@
+<section class="contact-section">
+  <div class="container">
+    <h1 class="page-title">Get In <span class="highlight">Touch</span></h1>
+    
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>Let's work together!</h2>
+        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+        
+        <div class="info-items">
+          <div class="info-item">
+            <span class="icon">📧</span>
+            <div>
+              <h3>Email</h3>
+              <p>diogovieira3@hotmail.com</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="icon">📱</span>
+            <div>
+              <h3>Phone</h3>
+              <p>+351 928 023 601</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <span class="icon">📍</span>
+            <div>
+              <h3>Location</h3>
+              <p>Aveiro, PT</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-section">
+          <h3>Follow Me</h3>
+          <div class="social-links">
+            <a href="https://github.com/DvGriffzz" target="_blank" class="social-btn">
+              <span>💻</span> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/diogo-vieira-6bb44a203/" target="_blank" class="social-btn">
+              <span>💼</span> LinkedIn
+            </a>
+            <a href="https://www.instagram.com/diogo_lml" target="_blank" class="social-btn">
+              <span>📸</span> Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <h3 class="form-title">Send me a message</h3>
+
+        <div class="form-group">
+          <label for="name">Name <span class="required">*</span></label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name"
+            [(ngModel)]="contactRequest.name" 
+            required
+            placeholder="Your name"
+            [disabled]="sending">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email"
+            [(ngModel)]="contactRequest.email" 
+            required
+            placeholder="your.email@example.com"
+            [disabled]="sending">
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message <span class="required">*</span></label>
+          <textarea 
+            id="message" 
+            name="message"
+            [(ngModel)]="contactRequest.message" 
+            required
+            rows="6"
+            placeholder="Your message..."
+            [disabled]="sending"></textarea>
+        </div>
+
+        <div *ngIf="success" class="success-message">
+          <span class="message-icon">✅</span>
+          <p>Message sent successfully! I'll get back to you soon.</p>
+        </div>
+
+        <div *ngIf="error" class="error-message">
+          <span class="message-icon">❌</span>
+          <p>{{ error }}</p>
+        </div>
+
+        <button 
+          type="submit" 
+          class="btn btn-submit"
+          [disabled]="sending || !contactForm.valid">
+          <span *ngIf="!sending">Send Message ✉️</span>
+          <span *ngIf="sending">Sending... ⏳</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

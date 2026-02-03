@@ -1,0 +1,60 @@
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <a routerLink="/" (click)="closeMenu()">
+        <span class="code-icon">&lt;/&gt;</span>
+        <span class="name">Diogo Vieira</span>
+      </a>
+    </div>
+
+    <!-- Hamburger Menu Button -->
+    <button class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen" aria-label="Toggle menu">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li>
+        <a routerLink="/" 
+           routerLinkActive="active" 
+           [routerLinkActiveOptions]="{exact: true}"
+           (click)="closeMenu()">
+          Home
+        </a>
+      </li>
+      <li>
+        <a routerLink="/about" 
+           routerLinkActive="active"
+           (click)="closeMenu()">
+          About
+        </a>
+      </li>
+      <li>
+        <a routerLink="/projects" 
+           routerLinkActive="active"
+           (click)="closeMenu()">
+          Projects
+        </a>
+      </li>
+      <li>
+        <a routerLink="/skills" 
+           routerLinkActive="active"
+           (click)="closeMenu()">
+          Skills
+        </a>
+      </li>
+      <li>
+        <a routerLink="/contact" 
+           routerLinkActive="active"
+           (click)="closeMenu()">
+          Contact
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Overlay for mobile menu -->
+<div class="overlay" [class.active]="isMenuOpen" (click)="closeMenu()"></div>

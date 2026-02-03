@@ -1,0 +1,37 @@
+<section class="skills-section">
+  <div class="container">
+    <h1 class="page-title">My <span class="highlight">Skills</span></h1>
+    
+    <div *ngIf="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Loading skills...</p>
+    </div>
+    
+    <div *ngIf="error" class="error">
+      <span class="error-icon">⚠️</span>
+      <p>{{ error }}</p>
+    </div>
+    
+    <div class="skills-container" *ngIf="!loading && !error && skills.length > 0">
+      <div class="level-section" *ngFor="let level of getLevels()">
+        <h2 class="level-title">
+          <span class="level-badge">{{ level }}</span>
+        </h2>
+        <div class="skills-grid">
+          <div class="skill-card" *ngFor="let skill of getSkillsByLevel(level)">
+            <div class="skill-icon">
+              <span>{{ getSkillIcon(skill.name) }}</span>
+            </div>
+            <h3>{{ skill.name }}</h3>
+            <span class="skill-level-badge">{{ skill.level }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!loading && !error && skills.length === 0" class="no-skills">
+      <span class="empty-icon">📚</span>
+      <p>No skills added yet.</p>
+    </div>
+  </div>
+</section>
