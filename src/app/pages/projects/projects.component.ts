@@ -26,6 +26,10 @@ export class ProjectsComponent implements OnInit {
       next: (data) => {
         this.projects = data;
         this.loading = false;
+
+        this.projects.forEach(project => {
+          console.log(project.imageUrl);
+        });
       },
       error: (err) => {
         this.error = 'Failed to load projects';
@@ -33,11 +37,5 @@ export class ProjectsComponent implements OnInit {
         console.error('Error loading projects:', err);
       }
     });
-  }
-
-  // Helper method to get Cloudinary image URL from publicId
-  getImageUrl(publicId: string): string {
-    // Replace YOUR_CLOUD_NAME with your actual Cloudinary cloud name
-    return `https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/${publicId}`;
   }
 }
